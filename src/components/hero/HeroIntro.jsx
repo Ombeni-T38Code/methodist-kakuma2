@@ -5,24 +5,30 @@ import "./HeroIntro.css";
 export default function HeroIntro() {
   return (
     <div className="hero-intro">
-      <h1>
-        Methodist 
-        <span>Church</span>
+      <span className="hero-kicker">
+        Worship together • Grow in truth • Walk in faith
+      </span>
+
+      <h1 className="hero-title">
+        Methodist <span>Church</span>
       </h1>
-      <span>Experience the power of God's word</span>
+
+      <h2 className="hero-slogan">
+        A place to belong, a community to grow, a family pursuing Christ together.
+      </h2>
+
       <p className="hero-copy">
-        A welcoming community of faith, worship, and fellowship. Join us as we
-        grow together in Christ, support one another, and serve our community
-        with love and hope.
+        Whether you're looking for community or exploring faith, you are welcome here. Join us as we gather in worship, dive into Scripture, and pursue Christ together.
       </p>
+
       <div className="hero-actions">
-        <Button variant="primary" href="#">
-          <i className="fas fa-church mr-2"></i>
-          Find a Church
+        <Button variant="primary" href="#services">
+          <i className="fas fa-church mr-2" aria-hidden="true"></i>
+          Join Us This Sunday
         </Button>
-        <Button variant="secondary" href="#">
+        <Button variant="secondary" href="#about">
           Learn More
-          <i className="fas fa-arrow-right ml-2"></i>
+          <i className="fas fa-arrow-right ml-2" aria-hidden="true"></i>
         </Button>
       </div>
     </div>
