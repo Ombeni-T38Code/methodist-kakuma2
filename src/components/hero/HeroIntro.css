@@ -95,7 +95,7 @@
 
 @media (max-width: 768px) {
   .hero-intro {
-    padding: 40px 20px 20px;
+    padding: 86px 20px 28px;
   }
 
   .hero-intro h1 {
@@ -108,9 +108,17 @@
 
   .hero-slogan {
     font-size: 1rem;
+    margin-top: 12px;
   }
 
   .hero-copy {
     font-size: 15px;
+    line-height: 1.5;
+    margin-top: 8px;
+  }
+
+  .hero-actions {
+    margin-top: 20px;
+    gap: 12px;
   }
 }
