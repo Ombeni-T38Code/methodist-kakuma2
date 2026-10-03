@@ -20,11 +20,19 @@
 @media (max-width: 1024px) {
   .hero-shell {
     grid-template-columns: 1fr;
-    padding-top: 70px;
+    position: relative;
     min-height: 100vh;
   }
 
   .hero-section {
     min-height: 100vh;
+  }
+
+  .hero-intro {
+    position: relative;
+    min-height: 100vh;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 48px;
   }
 }
