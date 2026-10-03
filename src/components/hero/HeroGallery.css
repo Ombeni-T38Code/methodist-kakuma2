@@ -1,0 +1,38 @@
+.hero-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  height: 100vh;
+  overflow: hidden;
+  /* padding: 0 20px 0 0; */
+}
+
+@media (max-width: 1024px) {
+  .hero-gallery {
+    height: 100%;
+    min-height: 480px;
+    padding: 0;
+    gap: 12px;
+  }
+
+  .hero-gallery-column {
+    min-height: 480px;
+  }
+
+  .hero-gallery-column::before,
+  .hero-gallery-column::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-gallery {
+    min-height: 420px;
+    height: 60vh;
+    gap: 10px;
+  }
+
+  .hero-gallery-column {
+    min-height: 420px;
+  }
+}

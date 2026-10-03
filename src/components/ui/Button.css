@@ -1,0 +1,32 @@
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 24px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: none;
+}
+
+.hero-button-primary {
+  background: #1a6cba;
+  color: #ffffff !important;
+  border: 1px solid #1a6cba;
+}
+
+.hero-button-secondary {
+  color: #1a6cba !important;
+  border: 1px solid #1a6cba;
+  background: #edf5ff;
+}
+
+.hero-button-primary:hover,
+.hero-button-secondary:hover {
+  background: #1a6cba;
+  color: #ffffff !important;
+  border-color: #1a6cba;
+  transform: none;
+}
