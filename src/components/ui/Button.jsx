@@ -9,7 +9,8 @@ export default function Button({
   style,
   className = "",
 }) {
-  const baseClass = variant === "primary" ? "hero-button-primary" : "hero-button-secondary";
+  const baseClass = variant === "primary"? "hero-button-primary" : "hero-button-secondary";
+  
 
   return (
     <a

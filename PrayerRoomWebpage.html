@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer Room - Kakuma Town</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Playfair Display for Serif headings, Inter for Sans body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#F3C669',
+                            goldLight: '#FDF6E2',
+                            goldText: '#C28E2A',
+                            navy: '#0B1325',
+                            navyHover: '#17233B',
+                            border: '#E2E8F0',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .card-bg-overlay {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.85) 70%, rgba(15, 23, 42, 0.98) 100%);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 30px -10px rgba(0, 0, 0, 0.3);
+        }
+        /* Fallback styling for images to prevent alt text leakage */
+        img {
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans min-h-screen flex items-center justify-center p-4 md:p-8 lg:p-12">
+
+    <main class="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <section class="lg:col-span-6 flex flex-col justify-center space-y-6">
+            
+            <!-- Schedule Pill Badge -->
+            <div>
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#FDF6E2] text-[#8C6219] border border-[#F3E5CA]">
+                    <i class="fa-solid fa-calendar-days text-xs text-[#C28E2A]"></i>
+                    Every Wednesday, Friday & Saturday
+                </span>
+            </div>
+
+            <!-- Title & Subtitle -->
+            <div class="space-y-2">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#0B1325] tracking-tight">
+                    Prayer Room
+                </h1>
+                <h2 class="text-lg md:text-xl font-bold text-[#C28E2A] tracking-wide">
+                    A Place for Prayer, Reflection and Fellowship
+                </h2>
+            </div>
+
+            <!-- Location Callout Box -->
+            <div class="bg-[#F6F6F4] border border-[#E8E8E5] rounded-xl p-3.5 flex items-center gap-3 text-gray-700 text-sm md:text-base">
+                <div class="flex-shrink-0 w-7 h-7 rounded-full bg-white flex items-center justify-center text-[#B8860B] shadow-sm border border-gray-200/60">
+                    <i class="fa-solid fa-location-dot text-xs"></i>
+                </div>
+                <div>
+                    <span>Location: </span>
+                    <strong class="font-bold text-gray-900">Kakuma Town</strong>
+                    <span class="text-gray-600 font-normal"> (Accessible to all seekers and believers)</span>
+                </div>
+            </div>
+
+            <!-- Paragraph Text -->
+            <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+                The Kakuma Town Prayer Room is an open spiritual sanctuary dedicated to quiet reflection, intense communal intercession, pastoral encouragement, and personal spiritual breakthrough. Here, heavy burdens are unburdened, hearts are renewed, and faith is strengthened in the living God.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap gap-3 pt-2">
+                <button onclick="openModal('scheduleModal')" class="px-5 py-3 rounded-xl bg-[#0B1325] hover:bg-[#18233C] text-white font-medium text-sm transition-all duration-200 shadow-sm flex items-center justify-center">
+                    Prayer Schedule
+                </button>
+                <button onclick="openModal('requestModal')" class="px-5 py-3 rounded-xl bg-[#F3C669] hover:bg-[#E5B552] text-[#3D2800] font-semibold text-sm transition-all duration-200 shadow-sm flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    Submit Prayer Request
+                </button>
+                <button onclick="openModal('locationModal')" class="px-5 py-3 rounded-xl bg-white border border-gray-300 hover:bg-gray-50 text-gray-800 font-medium text-sm transition-all duration-200 shadow-sm flex items-center justify-center">
+                    Find Prayer Room
+                </button>
+            </div>
+        </section>
+
+        <section class="lg:col-span-6 grid grid-cols-2 gap-4">
+            
+            <!-- Main Featured Top Card -->
+            <div class="col-span-2 relative rounded-2xl overflow-hidden h-72 md:h-80 shadow-md group card-hover cursor-pointer bg-slate-900" onclick="openModal('mainCardModal')">
+                <!-- Background Image -->
+                <img src="https://images.unsplash.com/photo-1545232979-fbf34fe37b3a?auto=format&fit=crop&w=1200&q=80" 
+                     alt="" 
+                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=1200&q=80';">
+                
+                <!-- Dark Gradient Overlay -->
+                <div class="absolute inset-0 card-bg-overlay"></div>
+
+                <!-- Card Content -->
+                <div class="relative h-full flex flex-col justify-between p-6 text-white z-10">
+                    <!-- Top Badge -->
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-hands-praying text-amber-300 text-xs"></i>
+                        <span class="text-xs font-semibold tracking-wider text-amber-200 uppercase">
+                            SANCTUARY OF PEACE
+                        </span>
+                    </div>
+
+                    <!-- Main Scripture Quote -->
+                    <div class="my-auto py-2">
+                        <blockquote class="font-serif italic text-lg md:text-xl lg:text-2xl leading-relaxed text-gray-100 font-medium">
+                            "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God."
+                        </blockquote>
+                    </div>
+
+                    <!-- Bottom Metadata -->
+                    <div class="flex items-center justify-between text-xs md:text-sm text-gray-300 pt-2 border-t border-white/15">
+                        <span class="font-medium text-amber-200/90">— Philippians 4:6</span>
+                        <span class="flex items-center gap-1.5 text-gray-300 text-xs">
+                            <i class="fa-solid fa-lock text-amber-400 text-[11px]"></i>
+                            Confidential Pastoral Counsel
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Left Card: Personal Reflection -->
+            <div class="relative rounded-2xl overflow-hidden h-36 md:h-44 shadow-md group card-hover cursor-pointer bg-slate-900" onclick="openModal('reflectionModal')">
+                <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=600&q=80" 
+                     alt="" 
+                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=600&q=80';">
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/40 to-transparent"></div>
+
+                <div class="relative h-full flex items-end p-4 z-10">
+                    <span class="inline-flex items-center gap-2 text-xs md:text-sm font-semibold text-white">
+                        <i class="fa-solid fa-book-open text-amber-300 text-xs"></i>
+                        Personal Reflection
+                    </span>
+                </div>
+            </div>
+
+            <!-- Bottom Right Card: Communal Intercession -->
+            <div class="relative rounded-2xl overflow-hidden h-36 md:h-44 shadow-md group card-hover cursor-pointer bg-slate-900" onclick="openModal('intercessionModal')">
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=600&q=80" 
+                     alt="" 
+                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=600&q=80';">
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/40 to-transparent"></div>
+
+                <div class="relative h-full flex items-end p-4 z-10">
+                    <span class="inline-flex items-center gap-2 text-xs md:text-sm font-semibold text-white">
+                        <i class="fa-solid fa-users text-amber-300 text-xs"></i>
+                        Communal Intercession
+                    </span>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Modal Background Backdrop -->
+    <div id="modalBackdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300" onclick="closeAllModals()"></div>
+
+    <!-- 1. Prayer Schedule Modal -->
+    <div id="scheduleModal" class="fixed inset-x-4 top-[10%] max-w-lg mx-auto bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 hidden transform scale-95 opacity-0 transition-all duration-300 overflow-hidden">
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-slate-50">
+            <h3 class="text-xl font-serif font-bold text-gray-900 flex items-center gap-2">
+                <i class="fa-solid fa-clock text-amber-500 text-lg"></i>
+                Prayer Room Weekly Schedule
+            </h3>
+            <button onclick="closeAllModals()" class="text-gray-400 hover:text-gray-600 text-lg p-1">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="p-6 space-y-4 text-sm text-gray-600">
+            <div class="p-3 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg">
+                <p class="font-semibold text-amber-900">Open Doors Policy</p>
+                <p class="text-amber-700 text-xs mt-0.5">All sessions are free to attend. Pastoral guidance is always available.</p>
+            </div>
+            <div class="space-y-3">
+                <div class="flex justify-between items-center p-3 rounded-lg bg-gray-50">
+                    <div>
+                        <span class="font-bold text-gray-900 block">Wednesday</span>
+                        <span class="text-xs text-gray-500">Mid-Week Spiritual Breakthrough</span>
+                    </div>
+                    <span class="px-2.5 py-1 bg-white border border-gray-200 rounded-md font-semibold text-xs text-gray-700">5:00 PM – 7:30 PM</span>
+                </div>
+                <div class="flex justify-between items-center p-3 rounded-lg bg-gray-50">
+                    <div>
+                        <span class="font-bold text-gray-900 block">Friday</span>
+                        <span class="text-xs text-gray-500">Night Vigil & Communal Intercession</span>
+                    </div>
+                    <span class="px-2.5 py-1 bg-white border border-gray-200 rounded-md font-semibold text-xs text-gray-700">6:00 PM – 9:00 PM</span>
+                </div>
+                <div class="flex justify-between items-center p-3 rounded-lg bg-gray-50">
+                    <div>
+                        <span class="font-bold text-gray-900 block">Saturday</span>
+                        <span class="text-xs text-gray-500">Quiet Reflection & Individual Prayer</span>
+                    </div>
+                    <span class="px-2.5 py-1 bg-white border border-gray-200 rounded-md font-semibold text-xs text-gray-700">9:00 AM – 1:00 PM</span>
+                </div>
+            </div>
+        </div>
+        <div class="p-4 bg-gray-50 border-t border-gray-100 text-right">
+            <button onclick="closeAllModals()" class="px-4 py-2 bg-gray-800 text-white rounded-lg text-xs font-semibold hover:bg-gray-900">Close</button>
+        </div>
+    </div>
+
+    <!-- 2. Submit Prayer Request Modal -->
+    <div id="requestModal" class="fixed inset-x-4 top-[8%] max-w-lg mx-auto bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 hidden transform scale-95 opacity-0 transition-all duration-300 overflow-hidden">
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-slate-50">
+            <div>
+                <h3 class="text-xl font-serif font-bold text-gray-900">Submit Prayer Request</h3>
+                <p class="text-xs text-gray-500">Our team and elders will pray over your request.</p>
+            </div>
+            <button onclick="closeAllModals()" class="text-gray-400 hover:text-gray-600 text-lg p-1">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <form onsubmit="handlePrayerSubmit(event)" class="p-6 space-y-4">
+            <div>
+                <label class="block text-xs font-semibold text-gray-700 mb-1">Your Name (Optional)</label>
+                <input type="text" placeholder="Anonymous or Full Name" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none">
+            </div>
+            <div>
+                <label class="block text-xs font-semibold text-gray-700 mb-1">Prayer Intentions / Needs *</label>
+                <textarea required rows="4" placeholder="Share your burdens, thanksgiving, or specific prayers..." class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none"></textarea>
+            </div>
+            <div id="submitMessage" class="hidden p-3 bg-emerald-50 text-emerald-800 text-xs rounded-lg border border-emerald-200">
+                <i class="fa-solid fa-circle-check mr-1"></i> Your prayer request has been received with peace and care.
+            </div>
+            <div class="pt-2 flex justify-end gap-2">
+                <button type="button" onclick="closeAllModals()" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg text-xs font-semibold hover:bg-gray-50">Cancel</button>
+                <button type="submit" class="px-5 py-2 bg-[#F3C669] text-[#3D2800] rounded-lg text-xs font-bold hover:bg-[#E5B552] transition-colors">
+                    Submit Request
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- 3. Find Prayer Room Modal -->
+    <div id="locationModal" class="fixed inset-x-4 top-[10%] max-w-lg mx-auto bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 hidden transform scale-95 opacity-0 transition-all duration-300 overflow-hidden">
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-slate-50">
+            <h3 class="text-xl font-serif font-bold text-gray-900 flex items-center gap-2">
+                <i class="fa-solid fa-map-location-dot text-amber-500 text-lg"></i>
+                Location Details
+            </h3>
+            <button onclick="closeAllModals()" class="text-gray-400 hover:text-gray-600 text-lg p-1">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="p-6 space-y-4 text-sm text-gray-600">
+            <div class="rounded-xl overflow-hidden border border-gray-200 bg-slate-900 h-40 flex items-center justify-center relative">
+                <div class="text-center text-white p-4">
+                    <i class="fa-solid fa-location-dot text-amber-400 text-3xl mb-2 animate-bounce"></i>
+                    <p class="font-bold text-base">Kakuma Town Sanctuary</p>
+                    <p class="text-xs text-slate-300">Central Town Main Road, Kakuma</p>
+                </div>
+            </div>
+        </div>
+        <div class="p-4 bg-gray-50 border-t border-gray-100 text-right">
+            <button onclick="closeAllModals()" class="px-4 py-2 bg-gray-800 text-white rounded-lg text-xs font-semibold hover:bg-gray-900">Close</button>
+        </div>
+    </div>
+
+    <!-- 4. Feature Details Modals -->
+    <div id="mainCardModal" class="fixed inset-x-4 top-[15%] max-w-md mx-auto bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 hidden transform scale-95 opacity-0 transition-all duration-300 overflow-hidden p-6 text-center">
+        <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
+            <i class="fa-solid fa-hands-praying"></i>
+        </div>
+        <h3 class="text-lg font-serif font-bold text-gray-900 mb-2">Sanctuary of Peace</h3>
+        <p class="text-xs text-gray-600 leading-relaxed mb-4">
+            Philippians 4:6 serves as our core foundation. Rest in divine communion with complete confidentiality and pastoral care.
+        </p>
+        <button onclick="closeAllModals()" class="px-4 py-2 bg-amber-500 text-white rounded-lg text-xs font-bold hover:bg-amber-600 w-full">Understood</button>
+    </div>
+
+    <div id="reflectionModal" class="fixed inset-x-4 top-[15%] max-w-md mx-auto bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 hidden transform scale-95 opacity-0 transition-all duration-300 overflow-hidden p-6 text-center">
+        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
+            <i class="fa-solid fa-book-open"></i>
+        </div>
+        <h3 class="text-lg font-serif font-bold text-gray-900 mb-2">Personal Reflection</h3>
+        <p class="text-xs text-gray-600 leading-relaxed mb-4">
+            Quiet solitude space with Bibles and devotional guides for personal meditation and communion.
+        </p>
+        <button onclick="closeAllModals()" class="px-4 py-2 bg-blue-600 text-white rounded-lg text-xs font-bold hover:bg-blue-700 w-full">Close</button>
+    </div>
+
+    <div id="intercessionModal" class="fixed inset-x-4 top-[15%] max-w-md mx-auto bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 hidden transform scale-95 opacity-0 transition-all duration-300 overflow-hidden p-6 text-center">
+        <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
+            <i class="fa-solid fa-users"></i>
+        </div>
+        <h3 class="text-lg font-serif font-bold text-gray-900 mb-2">Communal Intercession</h3>
+        <p class="text-xs text-gray-600 leading-relaxed mb-4">
+            Gather with leaders and believers to intercede together for families, the community, and personal prayer needs.
+        </p>
+        <button onclick="closeAllModals()" class="px-4 py-2 bg-purple-600 text-white rounded-lg text-xs font-bold hover:bg-purple-700 w-full">Close</button>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            const backdrop = document.getElementById('modalBackdrop');
+            const modal = document.getElementById(modalId);
+            
+            if (modal) {
+                backdrop.classList.remove('hidden');
+                modal.classList.remove('hidden');
+                
+                setTimeout(() => {
+                    backdrop.classList.remove('opacity-0');
+                    modal.classList.remove('opacity-0', 'scale-95');
+                    modal.classList.add('scale-100');
+                }, 10);
+            }
+        }
+
+        function closeAllModals() {
+            const backdrop = document.getElementById('modalBackdrop');
+            const modals = document.querySelectorAll('[id$="Modal"]');
+
+            backdrop.classList.add('opacity-0');
+            modals.forEach(modal => {
+                modal.classList.add('opacity-0', 'scale-95');
+                modal.classList.remove('scale-100');
+            });
+
+            setTimeout(() => {
+                backdrop.classList.add('hidden');
+                modals.forEach(modal => modal.classList.add('hidden'));
+                const msg = document.getElementById('submitMessage');
+                if (msg) msg.classList.add('hidden');
+            }, 300);
+        }
+
+        function handlePrayerSubmit(event) {
+            event.preventDefault();
+            const msg = document.getElementById('submitMessage');
+            msg.classList.remove('hidden');
+            
+            setTimeout(() => {
+                closeAllModals();
+                event.target.reset();
+            }, 1800);
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeAllModals();
+        });
+    </script>
+</body>
+</html>

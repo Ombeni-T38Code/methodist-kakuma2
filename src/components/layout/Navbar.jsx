@@ -17,7 +17,7 @@ export default function Navbar({ isMobileMenuOpen, onToggleMenu }) {
           </div>
           <div className="logo-text">
             <strong>METHODIST CHURCH</strong>
-            <span>KAKUMA FELLOWSHIP</span>
+            <span>KAKUMA 2</span>
           </div>
         </Link>
 
@@ -38,7 +38,7 @@ export default function Navbar({ isMobileMenuOpen, onToggleMenu }) {
 
         {/* Prayer Request CTA */}
         <div className="nav-actions">
-          <Button href="/prayer-request" variant="primary">
+          <Button href="/prayer-request" variant="primarys">
             Prayer Request
           </Button>
         </div>

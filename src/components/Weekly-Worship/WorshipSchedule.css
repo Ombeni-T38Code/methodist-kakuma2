@@ -1,0 +1,841 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+/* =========================================================
+   WORSHIP SCHEDULE
+   FULL PAGE / FULL WIDTH VERSION
+   ========================================================= */
+
+.worship-section {
+  --worship-bg: #f8fafc;
+  --worship-card: #ffffff;
+  --worship-dark: #0a2540;
+  --worship-dark-border: #153a60;
+
+  --worship-border: #e2e8f0;
+
+  --worship-heading: #0f172a;
+  --worship-body: #64748b;
+  --worship-muted: #64748b;
+
+  --worship-gold: #1a6cba;
+  --worship-gold-bright: #2582e0;
+  --worship-gold-bg: #eff6ff;
+  --worship-gold-border: #bfdbfe;
+
+  --worship-gray-bg: #f1f5f9;
+  --worship-gray-text: #475569;
+  --worship-gray-border: #e2e8f0;
+
+  --worship-navy-bg: #13385c;
+  --worship-navy-text: #93c5fd;
+  --worship-navy-border: #1e4976;
+
+  --worship-notice-bg: #f0f4f8;
+  --worship-notice-border: #cbd5e1;
+  --worship-notice-text: #334155;
+
+  --worship-serif: "Playfair Display", Georgia, serif;
+
+  --worship-sans:
+    "Plus Jakarta Sans",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 56px 5%;
+
+  background: var(--worship-bg);
+  color: #334155;
+
+  overflow: hidden;
+}
+
+.worship-section *,
+.worship-section *::before,
+.worship-section *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.worship-container {
+  width: 100%;
+  max-width: 1440px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.worship-header {
+  width: 100%;
+  max-width: 720px;
+
+  margin: 0 auto 8px;
+
+  text-align: center;
+}
+
+.worship-subtitle {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-family: var(--worship-sans);
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+
+  color: var(--worship-muted);
+}
+
+.worship-header h1 {
+  margin: 0 0 12px;
+
+  font-family: var(--worship-serif);
+  font-size: 48px;
+  font-weight: 700;
+
+  line-height: 1.12;
+  letter-spacing: 0;
+
+  color: var(--worship-heading);
+}
+
+.worship-header p {
+  max-width: 600px;
+
+  margin: 0 auto;
+
+  font-family: var(--worship-sans);
+  font-size: 13px;
+  line-height: 1.7;
+
+  color: var(--worship-body);
+}
+
+/* =========================================================
+   SERVICE GRID
+   ========================================================= */
+
+.worship-grid {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+/* =========================================================
+   NORMAL CARD
+   ========================================================= */
+
+.worship-card {
+  width: 100%;
+  min-height: 260px;
+
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: var(--worship-card);
+
+  border: 1px solid var(--worship-border);
+  border-radius: 12px;
+
+  box-shadow:
+    0 4px 20px -2px rgba(15, 23, 42, 0.05),
+    0 2px 6px -1px rgba(0, 0, 0, 0.02);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.worship-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #bfdbfe;
+
+  box-shadow:
+    0 8px 24px -2px rgba(15, 23, 42, 0.1),
+    0 5px 12px -3px rgba(0, 0, 0, 0.04);
+}
+
+.worship-card-content {
+  width: 100%;
+}
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.worship-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 16px;
+}
+
+.worship-day-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 9px;
+}
+.worship-title {
+  margin: 0 0 12px;
+  font-family: var(--worship-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--worship-heading);
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.worship-title-accent {
+  color: var(--worship-gold);
+  font-style: italic;
+  font-weight: 500;
+}
+.worship-day-group h2 {
+  margin: 0;
+
+  font-family: var(--worship-serif);
+  font-size: 27px;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  color: var(--worship-heading);
+}
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.worship-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  border-radius: 999px;
+
+  white-space: nowrap;
+
+  font-family: var(--worship-sans);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.worship-badge-amber {
+  padding: 4px 11px;
+
+  background: var(--worship-gold-bg);
+  color: #1a6cba;
+
+  border: 1px solid var(--worship-gold-border);
+}
+
+.worship-badge-gray {
+  padding: 4px 11px;
+
+  background: var(--worship-gray-bg);
+  color: var(--worship-gray-text);
+
+  border: 1px solid var(--worship-gray-border);
+
+  font-weight: 500;
+}
+
+.worship-badge-gold {
+  padding: 5px 12px;
+
+  background: var(--worship-gold-bright);
+  color: #0d161d;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.worship-badge-navy {
+  padding: 5px 12px;
+
+  background: var(--worship-navy-bg);
+  color: var(--worship-navy-text);
+
+  border: 1px solid var(--worship-navy-border);
+}
+
+.worship-badge-flagship {
+  padding: 6px 13px;
+
+  background: #cb8e2e;
+  color: #0d141b;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================================
+   SERVICE INFORMATION
+   ========================================================= */
+
+.worship-service-title {
+  margin: 0 0 9px;
+
+  font-family: var(--worship-sans);
+  font-size: 15px;
+  font-weight: 700;
+
+  color: #0f172a;
+}
+
+.worship-location {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 7px;
+
+  margin-bottom: 15px;
+
+  font-family: var(--worship-sans);
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #1a6cba;
+}
+
+.worship-location-icon {
+  flex-shrink: 0;
+
+  color: var(--worship-gold);
+
+  font-size: 16px;
+  line-height: 1;
+}
+
+.worship-location-text {
+  color: #475569;
+  font-weight: 400;
+}
+
+.worship-description {
+  max-width: 800px;
+
+  margin: 0;
+
+  font-family: var(--worship-sans);
+  font-size: 12px;
+  line-height: 1.75;
+
+  color: var(--worship-body);
+}
+
+/* =========================================================
+   CARD FOOTER
+   ========================================================= */
+
+.worship-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-top: 28px;
+  padding-top: 15px;
+
+  border-top: 1px solid #e2e8f0;
+
+  font-family: var(--worship-sans);
+  font-size: 10px;
+
+  color: #64748b;
+}
+
+.worship-footer-left {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  font-weight: 500;
+}
+
+.worship-footer-icon {
+  color: #1a6cba;
+}
+
+.worship-footer-right {
+  text-align: right;
+
+  color: #64748b;
+}
+
+/* =========================================================
+   FEATURED THURSDAY
+   ========================================================= */
+
+.worship-featured {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 330px;
+
+  padding: 34px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background: var(--worship-dark);
+
+  border: 1px solid var(--worship-dark-border);
+  border-radius: 12px;
+
+  box-shadow:
+    0 12px 30px -4px rgba(5, 20, 28, 0.35),
+    0 4px 10px -2px rgba(0, 0, 0, 0.2);
+}
+
+.worship-featured-content {
+  position: relative;
+  z-index: 2;
+}
+
+.worship-watermark {
+  position: absolute;
+
+  right: -20px;
+  bottom: -60px;
+
+  font-size: 260px;
+  line-height: 1;
+
+  color: #ffffff;
+  opacity: 0.05;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   FEATURED HEADER
+   ========================================================= */
+
+.worship-featured-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+}
+
+.worship-featured .worship-day-group h2 {
+  color: #ffffff;
+}
+
+.worship-featured-title {
+  margin: 0 0 13px;
+
+  font-family: var(--worship-sans);
+  font-size: 21px;
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+.worship-featured-location {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 15px;
+
+  color: #60a5fa;
+}
+
+.worship-stations {
+  display: flex;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+}
+
+.worship-station-pill {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 4px 9px;
+
+  border-radius: 6px;
+
+  background: #13385c;
+  color: #bfdbfe;
+
+  font-family: var(--worship-sans);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.worship-featured-description {
+  max-width: 850px;
+
+  margin: 0;
+
+  font-family: var(--worship-sans);
+  font-size: 12px;
+  line-height: 1.75;
+
+  color: #a3b8c4;
+}
+
+/* =========================================================
+   FEATURED FOOTER
+   ========================================================= */
+
+.worship-featured-footer {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  gap: 18px;
+
+  margin-top: 30px;
+  padding-top: 18px;
+
+  border-top: 1px solid #1e4976;
+
+  font-family: var(--worship-sans);
+  font-size: 10px;
+
+  color: #93c5fd;
+}
+
+.worship-featured-tags {
+  display: flex;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 22px;
+}
+
+.worship-featured-item {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #ffffff;
+
+  font-weight: 500;
+}
+
+.worship-featured-item span:first-child {
+  color: #60a5fa;
+  font-size: 13px;
+}
+
+/* =========================================================
+   NOTICE
+   ========================================================= */
+
+.worship-notice-wrapper {
+  width: 100%;
+
+  padding-top: 5px;
+}
+
+.worship-notice {
+  width: 100%;
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+
+  padding: 16px 20px;
+
+  background: var(--worship-notice-bg);
+
+  border: 1px solid var(--worship-notice-border);
+  border-radius: 8px;
+
+  font-family: var(--worship-sans);
+  font-size: 11px;
+  line-height: 1.6;
+
+  color: var(--worship-notice-text);
+}
+
+.worship-notice p {
+  margin: 0;
+}
+
+.worship-notice strong {
+  font-weight: 700;
+}
+
+.worship-info {
+  flex-shrink: 0;
+
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #857868;
+  border-radius: 50%;
+
+  font-family: var(--worship-serif);
+  font-size: 10px;
+  font-weight: 700;
+
+  color: #857868;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1200px) {
+  .worship-section {
+    padding: 64px 5%;
+  }
+
+  .worship-container {
+    max-width: 1440px;
+    gap: 24px;
+  }
+
+  .worship-grid {
+    gap: 20px;
+  }
+
+  .worship-card {
+    min-height: 260px;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 991px) {
+  .worship-section {
+    padding: 48px 4%;
+  }
+
+  .worship-container {
+    max-width: 100%;
+  }
+
+  .worship-card {
+    padding: 25px;
+  }
+
+  .worship-featured {
+    padding: 28px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .worship-section {
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 40px 18px;
+  }
+
+  .worship-container {
+    width: 100%;
+
+    gap: 18px;
+  }
+
+  .worship-header {
+    margin-bottom: 10px;
+  }
+
+  .worship-header h1 {
+    font-size: 40px;
+  }
+
+  .worship-header p {
+    font-size: 12px;
+  }
+
+  .worship-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .worship-card {
+    min-height: 0;
+
+    padding: 23px;
+
+    border-radius: 15px;
+  }
+
+  .worship-card-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .worship-day-group h2 {
+    font-size: 24px;
+  }
+
+  .worship-card-footer {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .worship-footer-right {
+    text-align: left;
+  }
+
+  .worship-featured {
+    min-height: 0;
+
+    padding: 24px;
+
+    border-radius: 15px;
+  }
+
+  .worship-featured-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .worship-featured-title {
+    font-size: 18px;
+  }
+
+  .worship-featured-footer {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .worship-featured-tags {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .worship-notice {
+    align-items: flex-start;
+
+    padding: 14px;
+
+    font-size: 10px;
+  }
+
+  .worship-watermark {
+    right: -15px;
+    bottom: -30px;
+
+    font-size: 160px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+  .worship-section {
+    padding: 32px 14px;
+  }
+
+  .worship-header h1 {
+    font-size: 36px;
+  }
+
+  .worship-card {
+    padding: 20px;
+  }
+
+  .worship-featured {
+    padding: 20px;
+  }
+
+  .worship-station-pill {
+    font-size: 10px;
+  }
+
+  .worship-notice {
+    padding: 12px;
+  }
+}

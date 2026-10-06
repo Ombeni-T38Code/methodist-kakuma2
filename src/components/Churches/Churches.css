@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+.churches-page {
+  min-height: 100vh;
+  padding: 64px 16px;
+  background: linear-gradient(180deg, #f7f4ee 0%, #f2efe7 100%);
+  color: #23313d;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.churches-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.churches-list {
+  width: 100%;
+}
+
+.no-churches {
+  text-align: center;
+  background: #fffdf9;
+  border: 1px solid #e6dfd2;
+  border-radius: 18px;
+  padding: 48px 24px;
+  box-shadow: 0 10px 30px rgba(19, 31, 39, 0.04);
+}
+
+.no-church-icon {
+  font-size: 35px;
+  color: #2d6a5f;
+  margin-bottom: 12px;
+}
+
+.no-churches h3 {
+  margin: 0;
+  color: #10232d;
+  font-size: 18px;
+}
+
+.no-churches p {
+  color: #586a73;
+  font-size: 13px;
+  margin: 7px 0 18px;
+}
+
+.no-churches button {
+  border: none;
+  background: #1d5f4c;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.no-churches button:hover {
+  background: #164d3f;
+}

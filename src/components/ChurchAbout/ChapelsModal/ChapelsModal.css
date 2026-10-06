@@ -1,0 +1,51 @@
+.tab-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: transparent;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+}
+
+.tab-btn.active {
+  background: #d2d7db;
+  color: #1a6cba;
+}
+
+.chapel-details-box {
+  margin-top: 1.25rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: #faf8f5;
+  border: 1px solid #1a6cba;
+}
+
+.chapel-details-box h3 {
+  color: #0f172a;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.chapel-details-box > p {
+  font-size: 0.875rem;
+  color: #475569;
+  margin-bottom: 1rem;
+}
+
+.chapel-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}

@@ -1,0 +1,239 @@
+
+/* =========================================
+   CHURCHES / MIDWEEK SERVICES HEADER
+   ========================================= */
+
+.churches-header {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 5px 24px 60px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Parish Badge */
+.churches-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding: 9px 18px;
+  border: 1px solid rgba(197, 154, 69, 0.35);
+  border-radius: 50px;
+  background: rgba(197, 154, 69, 0.08);
+  color: #c59a45;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+/* Badge Dot */
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #c59a45;
+  box-shadow: 0 0 0 5px rgba(197, 154, 69, 0.12);
+}
+
+/* Main Heading */
+.churches-title {
+  margin: 0;
+  color: #132238;
+  font-family: "Cinzel", "Georgia", serif;
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+/* Swahili Subtitle */
+.churches-swahili-subtitle {
+  margin: 18px 0 0;
+  color: #1a6cba;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Divider */
+.churches-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: min(360px, 80%);
+  margin: 30px auto;
+}
+
+/* Divider Lines */
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #1a6cba
+  );
+}
+
+.divider-line:last-child {
+  background: linear-gradient(
+    to left,
+    transparent,
+    #1a6cba
+  );
+}
+
+/* Cross */
+.divider-cross {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #1a6dba81;
+  border-radius: 50%;
+  color: #1a6cba;
+  background: #faf8f5;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+/* Description */
+.churches-description {
+  max-width: 780px;
+  margin: 0 auto;
+  color: #526174;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+/* =========================================
+   HOVER EFFECT
+   ========================================= */
+
+.churches-badge {
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.churches-badge:hover {
+  transform: translateY(-2px);
+  background: #1a6cba1a;
+  border-color: #1a6dba63;
+}
+
+/* =========================================
+   ANIMATION
+   ========================================= */
+
+.churches-header {
+  animation: churchesHeaderFade 0.8s ease-out both;
+}
+
+@keyframes churchesHeaderFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 768px) {
+  .churches-header {
+    padding: 70px 22px 50px;
+  }
+
+  .churches-badge {
+    font-size: 0.7rem;
+    letter-spacing: 1.2px;
+    padding: 8px 15px;
+  }
+
+  .churches-divider {
+    margin: 26px auto;
+  }
+
+  .churches-description {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+  .churches-header {
+    padding: 55px 18px 40px;
+  }
+
+  .churches-badge {
+    gap: 8px;
+    padding: 7px 12px;
+    font-size: 0.64rem;
+    letter-spacing: 0.9px;
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .churches-title {
+    font-size: 2.35rem;
+  }
+
+  .churches-swahili-subtitle {
+    margin-top: 12px;
+    font-size: 1.1rem;
+  }
+
+  .churches-divider {
+    gap: 12px;
+    margin: 22px auto;
+  }
+
+  .divider-cross {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+
+  .churches-description {
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .churches-header {
+    animation: none;
+  }
+
+  .churches-badge {
+    transition: none;
+  }
+}

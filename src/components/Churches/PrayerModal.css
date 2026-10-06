@@ -1,0 +1,348 @@
+/* Overlay Backdrop */
+.prayer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  background: rgba(11, 20, 27, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Modal Card Box */
+.prayer-modal {
+  position: relative;
+  width: min(100%, 400px);
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.18),
+              0 8px 16px -8px rgba(15, 23, 42, 0.08);
+  animation: modalSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Close Icon Button */
+.close-prayer {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #f1f5f9;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-prayer:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* Header & Accent Icon */
+.prayer-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.prayer-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fef3c7;
+  color: #1a6cba;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0 4px #fffbeb;
+}
+
+/* Typography */
+.prayer-title {
+  margin: 4px 0 0;
+  text-align: center;
+  color: #0f172a;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.prayer-subtitle {
+  margin: 6px auto 16px;
+  color: #64748b;
+  font-size: 12.5px;
+  line-height: 1.45;
+  text-align: center;
+  max-width: 320px;
+}
+
+/* Form Layout */
+.prayer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prayer-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.prayer-form label {
+  color: #334155;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Label with Icon */
+.label-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #334155;
+}
+
+.label-with-icon svg {
+  color: #1a6cba;
+}
+
+/* Form Inputs & Select Wrappers */
+.custom-select-wrap,
+.prayer-form input[type="text"],
+.prayer-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 13.5px;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.custom-select-wrap {
+  position: relative;
+}
+
+.custom-select-wrap::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #64748b;
+  pointer-events: none;
+}
+
+.prayer-form select {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #0f172a;
+  font: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 9px 32px 9px 12px;
+  cursor: pointer;
+}
+
+.prayer-form input[type="text"] {
+  padding: 9px 12px;
+}
+
+.prayer-form textarea {
+  resize: vertical;
+  min-height: 64px;
+  padding: 9px 12px;
+  line-height: 1.4;
+}
+
+/* Focus States */
+.prayer-form input:focus,
+.prayer-form textarea:focus,
+.custom-select-wrap:focus-within {
+  border-color: #1a6cba;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(26, 108, 186, 0.15);
+  outline: none;
+}
+
+/* Checkbox Row */
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  color: #475569;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-row input {
+  width: 16px;
+  height: 16px;
+  accent-color: #1a6cba;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Action Buttons Grid */
+.prayer-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.cancel-prayer-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 9.5px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #ffffff;
+  color: #475569;
+  transition: all 0.2s ease;
+}
+
+.cancel-prayer-btn:hover:not(:disabled) {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+.submit-prayer-btn {
+  flex: 1.6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #1a6cba;
+  color: #ffffff;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(26, 108, 186, 0.25);
+}
+
+.submit-prayer-btn:hover:not(:disabled) {
+  background: #155796;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(26, 108, 186, 0.35);
+}
+
+.submit-prayer-btn:disabled,
+.cancel-prayer-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submit-arrow {
+  color: #f0c56a;
+  transition: transform 0.2s ease;
+}
+
+.submit-prayer-btn:hover:not(:disabled) .submit-arrow {
+  transform: translateX(3px);
+}
+
+/* Confirmation / Success Screen */
+.prayer-success {
+  text-align: center;
+  padding: 16px 8px 10px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.success-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #16a34a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0 4px #f0fdf4;
+}
+
+.prayer-success h4 {
+  color: #0f172a;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.prayer-success p {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  .prayer-modal {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .close-prayer {
+    right: 10px;
+    top: 10px;
+  }
+
+  .prayer-title {
+    font-size: 1.2rem;
+  }
+}

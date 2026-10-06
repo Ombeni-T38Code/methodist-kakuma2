@@ -1,0 +1,107 @@
+.pastor-contact-area {
+  margin-top: 1.5rem;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #1a6cba;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.pastor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.pastor-form input,
+.pastor-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.6rem;
+  outline: none;
+}
+
+.pastor-form input:focus,
+.pastor-form textarea:focus {
+  border-color: #1a6cba;
+  box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.1);
+}
+
+.form-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.pastors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.pastor-item-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.15rem;
+  border: 1px solid #f1f5f9;
+  border-radius: 1.15rem;
+  background: #f8fafc;
+}
+
+.pastor-large-avatar {
+  width: 4.25rem;
+  height: 4.25rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #1a6cba;
+  flex-shrink: 0;
+}
+
+.pastor-info {
+  flex: 1;
+}
+
+.pastor-info h4 {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.pastor-info p {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.pastor-info strong {
+  color: #1a6cba;
+  font-size: 0.75rem;
+}
+
+.contact-button {
+  width: auto !important;
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+@media (max-width: 639px) {
+  .form-two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .pastor-item-card {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .contact-button {
+    width: 100% !important;
+  }
+}

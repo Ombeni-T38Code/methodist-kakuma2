@@ -4,6 +4,8 @@
   gap: 16px;
   height: 100vh;
   overflow: hidden;
+  box-shadow: none;
+  border: none;
   /* padding: 0 20px 0 0; */
 }
 
