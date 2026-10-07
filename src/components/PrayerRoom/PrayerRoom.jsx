@@ -51,8 +51,7 @@ const PrayerRoom = () => {
         <section className="prayer-room-content">
           <div>
             <span className="schedule-badge">
-              <span className="badge-icon">◷</span>
-              Every Wednesday, Friday & Saturday
+              Every Wednesday / Friday / Saturday
             </span>
           </div>
 
@@ -71,7 +70,7 @@ const PrayerRoom = () => {
 
             <div>
               <span>Location: </span>
-              <strong>Kakuma Town</strong>
+              <strong>Kakuma 2</strong>
               <span className="location-note">
                 {" "}
                 (Accessible to all seekers and believers)
@@ -80,7 +79,7 @@ const PrayerRoom = () => {
           </div>
 
           <p className="prayer-description">
-            The Kakuma Town Prayer Room is an open spiritual sanctuary
+            The Mungu Ni Jibu Prayer Room is an open spiritual sanctuary
             dedicated to quiet reflection, intense communal intercession,
             pastoral encouragement, and personal spiritual breakthrough.
             Here, heavy burdens are unburdened, hearts are renewed, and
@@ -229,25 +228,32 @@ const PrayerRoom = () => {
                   <span>Mid-Week Spiritual Breakthrough</span>
                 </div>
 
-                <time>5:00 PM – 7:30 PM</time>
+                <time>9:00 AM – 2:00 PM</time>
               </div>
 
+              <div className="schedule-item">
+                <div>
+                  <strong>Friday</strong>
+                  <span>Morning Vigil & Communal Intercession</span>
+                </div>
+
+                <time>9:00 AM – 2:00 PM</time>
+              </div>
               <div className="schedule-item">
                 <div>
                   <strong>Friday</strong>
                   <span>Night Vigil & Communal Intercession</span>
                 </div>
 
-                <time>6:00 PM – 9:00 PM</time>
+                <time>9:00 PM – 3:00 PM</time>
               </div>
-
               <div className="schedule-item">
                 <div>
                   <strong>Saturday</strong>
                   <span>Quiet Reflection & Individual Prayer</span>
                 </div>
 
-                <time>9:00 AM – 1:00 PM</time>
+                <time>9:00 AM – 2:00 PM</time>
               </div>
             </div>
           </div>

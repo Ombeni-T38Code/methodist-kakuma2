@@ -14,11 +14,12 @@ export default function HeroIntro() {
       </h1>
 
       <h2 className="hero-slogan">
-        A place to belong, a community to grow, a family pursuing Christ together.
+        Faith, Peace, and Hope in the Desert.
       </h2>
 
       <p className="hero-copy">
-        Whether you're looking for community or exploring faith, you are welcome here. Join us as we gather in worship, dive into Scripture, and pursue Christ together.
+        Find trusted information about worship, prayer, and community life in
+        the Kakuma Knowledge Base.
       </p>
 
       <div className="hero-actions">
@@ -26,8 +27,8 @@ export default function HeroIntro() {
           <i className="fas fa-church mr-2" aria-hidden="true"></i>
           Join Us This Sunday
         </Button>
-        <Button variant="secondary" href="#about">
-          Learn More
+        <Button variant="secondary" href="/resources">
+          Ask Church AI
           <i className="fas fa-arrow-right ml-2" aria-hidden="true"></i>
         </Button>
       </div>

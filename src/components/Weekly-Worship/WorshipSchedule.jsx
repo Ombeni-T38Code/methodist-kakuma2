@@ -18,7 +18,7 @@ const servicesTop = [
     day: "Wednesday",
     badge: "Midweek",
     title: "Prayer Room Services",
-    location: "Kakuma Town",
+    location: "Kakuma 2",
     description:
       "Dedicated evening intercession, scripture contemplation, and communal burdens laid before God in fervent fellowship.",
     footerLeft: "Evening Intercession",
@@ -32,7 +32,7 @@ const servicesBottom = [
     day: "Friday",
     badge: "Vigil",
     title: "Prayer Room Services",
-    location: "Kakuma Town",
+    location: "Kakuma 2",
     description:
       "Fervent healing prayer, repentance, individual pastoral counsel, and spiritual rejuvenation for all believers and seekers.",
     footerLeft: "Healing & Repentance",
@@ -43,7 +43,7 @@ const servicesBottom = [
     day: "Saturday",
     badge: "Fellowship",
     title: "Prayer Room Services",
-    location: "Kakuma Town",
+    location: "Kakuma 2",
     description:
       "Preparatory weekend prayer, youth devotionals, choir rehearsal dedication, and joyful songs of praise and gratitude.",
     footerLeft: "Youth & Choir Dedication",

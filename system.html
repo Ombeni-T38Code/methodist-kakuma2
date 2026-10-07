@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wi-Fi Hotspot Payment Portal</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between font-sans selection:bg-indigo-500 selection:text-white">
+
+    <!-- Header -->
+    <header class="w-full bg-slate-900/80 backdrop-blur border-b border-slate-800 py-4 px-6 shadow-sm">
+        <div class="max-w-md mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
+                <span class="font-bold tracking-tight text-white">WI-FI HOTSPOT</span>
+            </div>
+            <span class="text-xs uppercase tracking-wider bg-slate-800 text-slate-400 px-3 py-1 rounded-full border border-slate-700">Secure Gateway</span>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="w-full max-w-md mx-auto px-4 py-6 flex-grow flex flex-col justify-center">
+        
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-2xl">
+            <div class="text-center mb-6">
+                <h1 class="text-xl font-black text-white tracking-tight mb-1">Select Access Plan</h1>
+                <p class="text-xs text-slate-400">Choose a plan or enter an existing voucher to get online.</p>
+            </div>
+
+            <!-- Tab Switching -->
+            <div class="flex bg-slate-950 p-1 rounded-xl mb-6 border border-slate-800">
+                <button onclick="switchTab('plans')" id="tab-plans" class="flex-1 py-2 text-xs font-semibold rounded-lg bg-indigo-600 text-white transition-all shadow">Buy Access</button>
+                <button onclick="switchTab('voucher')" id="tab-voucher" class="flex-1 py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-white transition-all">Voucher PIN</button>
+            </div>
+
+            <!-- Plans View (MikroTik Hotspot Form Action) -->
+            <!-- Note: MikroTik uses $(link-login-only) or similar standard action URLs when hosted inside router -->
+            <form action="$(link-login-only)" method="post" id="view-plans" class="space-y-3">
+                <input type="hidden" name="dst" value="$(link-orig)">
+                <input type="hidden" name="popup" value="true">
+
+                <!-- Plan 1 -->
+                <label class="block relative cursor-pointer border border-slate-800 hover:border-indigo-500 bg-slate-950/60 rounded-xl p-3.5 transition-all group">
+                    <input type="radio" name="username" value="plan_1hour" class="peer hidden" checked>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="block font-bold text-sm text-white group-hover:text-indigo-400">1 Hour Pass</span>
+                            <span class="text-[11px] text-slate-400">High speed • Single device</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="block font-bold text-emerald-400 text-base">KES 20</span>
+                        </div>
+                    </div>
+                </label>
+
+                <!-- Plan 2 -->
+                <label class="block relative cursor-pointer border border-slate-800 hover:border-indigo-500 bg-slate-950/60 rounded-xl p-3.5 transition-all group">
+                    <input type="radio" name="username" value="plan_24hours" class="peer hidden">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="block font-bold text-sm text-white group-hover:text-indigo-400">24 Hours Pass</span>
+                            <span class="text-[11px] text-slate-400">Unlimited data • 1 Day</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="block font-bold text-emerald-400 text-base">KES 100</span>
+                        </div>
+                    </div>
+                </label>
+
+                <!-- Payment Action Button -->
+                <div class="mt-5 pt-4 border-t border-slate-800">
+                    <!-- Hidden password field required by MikroTik login backend -->
+                    <input type="hidden" name="password" value="1234">
+                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-indigo-600/20">
+                        Proceed to Connect
+                    </button>
+                </div>
+            </form>
+
+            <!-- Voucher View -->
+            <form action="$(link-login-only)" method="post" id="view-voucher" class="hidden space-y-4">
+                <input type="hidden" name="dst" value="$(link-orig)">
+                <input type="hidden" name="popup" value="true">
+                <input type="hidden" name="password" value="">
+                
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-2">Enter Voucher Code</label>
+                    <input type="text" name="username" placeholder="e.g., A7F93B" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white uppercase tracking-wider focus:outline-none focus:border-indigo-500 font-mono">
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-indigo-600/20">
+                    Connect with Voucher
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full text-center py-4 text-[11px] text-slate-600 border-t border-slate-900">
+        &copy; 2026 Wi-Fi Hotspot Network.
+    </footer>
+
+    <!-- Tab Logic Script -->
+    <script>
+        function switchTab(tab) {
+            const plansView = document.getElementById('view-plans');
+            const voucherView = document.getElementById('view-voucher');
+            const tabPlans = document.getElementById('tab-plans');
+            const tabVoucher = document.getElementById('tab-voucher');
+
+            if (tab === 'plans') {
+                plansView.classList.remove('hidden');
+                voucherView.classList.add('hidden');
+                tabPlans.className = "flex-1 py-2 text-xs font-semibold rounded-lg bg-indigo-600 text-white transition-all shadow";
+                tabVoucher.className = "flex-1 py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-white transition-all";
+            } else {
+                plansView.classList.add('hidden');
+                voucherView.classList.remove('hidden');
+                tabVoucher.className = "flex-1 py-2 text-xs font-semibold rounded-lg bg-indigo-600 text-white transition-all shadow";
+                tabPlans.className = "flex-1 py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-white transition-all";
+            }
+        }
+    </script>
+</body>
+</html>

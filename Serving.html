@@ -1,0 +1,1027 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Our Ministries | Methodist Church Kakuma</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --primary: #1a6cba;
+      --primary-dark: #12538f;
+      --primary-light: #eaf4fd;
+
+      --navy: #102a43;
+      --text: #263746;
+      --muted: #687786;
+
+      --background: #f6f9fc;
+      --white: #ffffff;
+
+      --border: #e5ebf1;
+
+      --shadow-sm:
+        0 4px 14px rgba(16, 42, 67, 0.06);
+
+      --shadow-md:
+        0 16px 40px rgba(16, 42, 67, 0.10);
+
+      --shadow-lg:
+        0 25px 70px rgba(16, 42, 67, 0.18);
+
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(26, 108, 186, 0.07),
+          transparent 30%
+        ),
+        var(--background);
+
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* =========================================
+       MAIN SECTION
+       ========================================= */
+
+    .ministries-section {
+      width: 100%;
+      padding: 90px 20px 110px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ministries-container {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
+
+    /* =========================================
+       HEADER
+       ========================================= */
+
+    .ministries-header {
+      max-width: 720px;
+      margin: 0 auto 65px;
+      text-align: center;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      padding: 9px 16px;
+      margin-bottom: 20px;
+
+      background: var(--primary-light);
+      border: 1px solid rgba(26, 108, 186, 0.12);
+
+      border-radius: 100px;
+
+      color: var(--primary);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .section-label::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 4px rgba(26, 108, 186, 0.10);
+    }
+
+    .ministries-title {
+      color: var(--navy);
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.05;
+
+      font-weight: 700;
+
+      letter-spacing: -0.025em;
+
+      margin-bottom: 18px;
+    }
+
+    .ministries-title span {
+      color: var(--primary);
+    }
+
+    .ministries-subtitle {
+      max-width: 580px;
+      margin: 0 auto;
+
+      color: var(--muted);
+
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* =========================================
+       DECORATIVE LINE
+       ========================================= */
+
+    .header-line {
+      width: 65px;
+      height: 3px;
+
+      margin: 25px auto 0;
+
+      background: var(--primary);
+
+      border-radius: 50px;
+    }
+
+    /* =========================================
+       GRID
+       ========================================= */
+
+    .ministries-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 28px;
+    }
+
+    /* =========================================
+       CARD
+       ========================================= */
+
+    .ministry-card {
+      position: relative;
+
+      background: var(--white);
+
+      border: 1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      overflow: hidden;
+
+      box-shadow: var(--shadow-sm);
+
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+    }
+
+    .ministry-card:hover {
+      transform: translateY(-7px);
+
+      border-color: rgba(26, 108, 186, 0.20);
+
+      box-shadow: var(--shadow-md);
+    }
+
+    /* =========================================
+       IMAGE COLLAGE
+       ========================================= */
+
+    .image-gallery {
+      padding: 10px;
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      grid-template-rows: 170px 130px;
+
+      gap: 8px;
+    }
+
+    .gallery-image {
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: 13px;
+
+      background: #edf2f6;
+    }
+
+    .gallery-image:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-image img {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+
+      transition:
+        transform 0.6s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .gallery-image::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent 55%,
+          rgba(0,0,0,0.20)
+        );
+
+      pointer-events: none;
+    }
+
+    .ministry-card:hover .gallery-image img {
+      transform: scale(1.07);
+    }
+
+    /* =========================================
+       CARD CONTENT
+       ========================================= */
+
+    .card-content {
+      padding: 24px 25px 27px;
+    }
+
+    .card-top {
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 15px;
+
+      margin-bottom: 15px;
+    }
+
+    .ministry-icon {
+      flex: 0 0 auto;
+
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: var(--primary);
+
+      background: var(--primary-light);
+
+      border: 1px solid rgba(26, 108, 186, 0.10);
+
+      border-radius: 14px;
+
+      transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    .ministry-card:hover .ministry-icon {
+      background: var(--primary);
+      color: white;
+
+      transform: translateY(-2px);
+    }
+
+    .ministry-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .ministry-title {
+      color: var(--navy);
+
+      font-family: "Playfair Display", serif;
+
+      font-size: 25px;
+      line-height: 1.25;
+
+      font-weight: 700;
+
+      padding-top: 5px;
+    }
+
+    .ministry-description {
+      color: var(--muted);
+
+      font-size: 15px;
+      line-height: 1.75;
+
+      margin-bottom: 22px;
+    }
+
+    /* =========================================
+       LEARN MORE
+       ========================================= */
+
+    .learn-more {
+      width: fit-content;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      padding: 10px 0;
+
+      color: var(--primary);
+
+      background: transparent;
+
+      border: none;
+
+      font-family: inherit;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition:
+        color 0.25s ease,
+        gap 0.25s ease;
+    }
+
+    .learn-more:hover {
+      color: var(--primary-dark);
+      gap: 13px;
+    }
+
+    .learn-more svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    /* =========================================
+       MODAL
+       ========================================= */
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+
+      z-index: 999;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+
+      background: rgba(9, 25, 40, 0.72);
+
+      backdrop-filter: blur(8px);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal {
+      position: relative;
+
+      width: min(720px, 100%);
+
+      max-height: 90vh;
+
+      overflow-y: auto;
+
+      background: var(--white);
+
+      border-radius: 24px;
+
+      box-shadow: var(--shadow-lg);
+
+      transform: translateY(25px) scale(0.97);
+
+      transition: transform 0.35s ease;
+    }
+
+    .modal-backdrop.active .modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+
+      top: 18px;
+      right: 18px;
+
+      z-index: 5;
+
+      width: 42px;
+      height: 42px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(255,255,255,0.94);
+
+      border: 1px solid var(--border);
+
+      border-radius: 50%;
+
+      color: var(--navy);
+
+      cursor: pointer;
+
+      box-shadow: var(--shadow-sm);
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .modal-close:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .modal-body {
+      padding: 40px;
+    }
+
+    .modal-icon {
+      width: 58px;
+      height: 58px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 20px;
+
+      background: var(--primary-light);
+
+      color: var(--primary);
+
+      border-radius: 16px;
+    }
+
+    .modal-title {
+      color: var(--navy);
+
+      font-family: "Playfair Display", serif;
+
+      font-size: 34px;
+
+      margin-bottom: 15px;
+    }
+
+    .modal-description {
+      color: var(--muted);
+
+      font-size: 16px;
+
+      line-height: 1.8;
+
+      margin-bottom: 30px;
+    }
+
+    .gallery-title {
+      color: var(--navy);
+
+      font-family: "Playfair Display", serif;
+
+      font-size: 21px;
+
+      margin-bottom: 15px;
+    }
+
+    .modal-gallery {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 10px;
+    }
+
+    .modal-gallery img {
+      width: 100%;
+      height: 145px;
+
+      object-fit: cover;
+
+      border-radius: 12px;
+    }
+
+    /* =========================================
+       RESPONSIVE
+       ========================================= */
+
+    @media (max-width: 800px) {
+      .ministries-section {
+        padding: 70px 18px 80px;
+      }
+
+      .ministries-header {
+        margin-bottom: 45px;
+      }
+
+      .ministries-grid {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .ministries-section {
+        padding: 55px 14px 70px;
+      }
+
+      .ministries-title {
+        font-size: 40px;
+      }
+
+      .ministries-subtitle {
+        font-size: 15px;
+      }
+
+      .image-gallery {
+        grid-template-rows: 145px 105px;
+      }
+
+      .card-content {
+        padding: 21px;
+      }
+
+      .ministry-title {
+        font-size: 22px;
+      }
+
+      .modal-body {
+        padding: 30px 22px;
+      }
+
+      .modal-title {
+        font-size: 28px;
+      }
+
+      .modal-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-gallery img {
+        height: 190px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="ministries-section">
+
+  <div class="ministries-container">
+
+    <!-- HEADER -->
+    <header class="ministries-header">
+
+      <div class="section-label">
+        Methodist Church Kakuma
+      </div>
+
+      <h1 class="ministries-title">
+        Our <span>Ministries</span>
+      </h1>
+
+      <p class="ministries-subtitle">
+        Everyone has a place to serve, grow, worship, and make a difference.
+        Discover the ministries that help our church family live out the
+        love of Christ.
+      </p>
+
+      <div class="header-line"></div>
+
+    </header>
+
+
+    <!-- MINISTRIES -->
+    <div id="ministries-grid" class="ministries-grid"></div>
+
+  </div>
+
+</section>
+
+
+<!-- MODAL -->
+
+<div id="modal-backdrop" class="modal-backdrop">
+
+  <div class="modal">
+
+    <button
+      id="modal-close"
+      class="modal-close"
+      aria-label="Close"
+    >
+      <i data-lucide="x"></i>
+    </button>
+
+    <div id="modal-content"></div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+const ministriesData = [
+
+  {
+    id: "youth",
+    title: "Youth Ministry",
+    icon: "zap",
+
+    description:
+      "Empowering young people through Bible mentorship, leadership development, talents, and fellowship.",
+
+    detailedText:
+      "Our Youth Ministry provides a vibrant and welcoming community where young people can explore their faith, develop their talents, build friendships, and grow as Christ-centered leaders. Through fellowship, Bible study, worship, mentorship, and service, young people are encouraged to discover their God-given purpose.",
+
+    images: [
+      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1000&q=85"
+    ]
+  },
+
+  {
+    id: "children",
+    title: "Children Ministry",
+    icon: "heart",
+
+    description:
+      "Nurturing children through Sunday school, Scripture, songs, fellowship, and joyful Christian learning.",
+
+    detailedText:
+      "Our Children Ministry exists to help children discover God's love from an early age. Through Bible stories, Scripture memory, songs, creative activities, fellowship, and caring teachers, we create an environment where every child can learn, grow, and feel valued within the church family.",
+
+    images: [
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1000&q=85"
+    ]
+  },
+
+  {
+    id: "women",
+    title: "Women Ministry",
+    icon: "cross",
+
+    description:
+      "Building sisterhood through prayer, fellowship, mentorship, family support, and compassionate service.",
+
+    detailedText:
+      "The Women Ministry brings women together for spiritual growth, prayer, encouragement, mentorship, fellowship, and community service. Through home visits, prayer gatherings, family support, and practical initiatives, women continue to play an important role in strengthening the church and community.",
+
+    images: [
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1000&q=85"
+    ]
+  },
+
+  {
+    id: "men",
+    title: "Men Ministry",
+    icon: "shield",
+
+    description:
+      "Building godly men through prayer, accountability, fellowship, leadership, and practical service.",
+
+    detailedText:
+      "Our Men Ministry encourages men to grow spiritually and become faithful servants, fathers, leaders, and members of the community. Through prayer, fellowship, accountability, Bible study, and practical service, men support one another while serving the church and wider community.",
+
+    images: [
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=85"
+    ]
+  },
+
+  {
+    id: "prayer",
+    title: "Prayer Ministry",
+    icon: "hands",
+
+    description:
+      "Strengthening the church through intercession, prayer gatherings, vigils, and the Kakuma Town Prayer Room.",
+
+    detailedText:
+      "Prayer is at the heart of our church life. The Prayer Ministry brings believers together to seek God, pray for families, communities, the church, and the world. It also supports the Kakuma Town Prayer Room as a place dedicated to prayer, reflection, and spiritual encouragement.",
+
+    images: [
+      "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=1000&q=85"
+    ]
+  },
+
+  {
+    id: "music",
+    title: "Music Ministry",
+    icon: "music",
+
+    description:
+      "Leading the church in joyful worship through Uhuru Choir, Fadhili Choir, and JC Band.",
+
+    detailedText:
+      "Our Music Ministry helps create an atmosphere of worship through singing, instruments, and musical service. It includes Uhuru Choir, Fadhili Choir, and JC Band, bringing together different gifts and talents to lead the congregation in praise and worship.",
+
+    images: [
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1000&q=85"
+    ]
+  },
+
+  {
+    id: "evangelism",
+    title: "Evangelism",
+    icon: "megaphone",
+
+    description:
+      "Sharing the Good News of Jesus Christ through outreach, witnessing, fellowship, and community missions.",
+
+    detailedText:
+      "Our Evangelism Ministry is committed to sharing the Good News of Jesus Christ with people in Kakuma and surrounding communities. Through personal witnessing, outreach activities, open-air gatherings, and community engagement, we seek to share God's love and invite people into a life of faith.",
+
+    images: [
+      "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1000&q=85"
+    ]
+  },
+
+  {
+    id: "community",
+    title: "Community Outreach",
+    icon: "heart-handshake",
+
+    description:
+      "Serving vulnerable families and communities through compassion, practical support, and acts of love.",
+
+    detailedText:
+      "Community Outreach expresses the practical love of Christ by supporting people who need encouragement and assistance. Through community visits, support initiatives, compassionate care, and partnerships, we seek to stand with vulnerable families and contribute positively to the wider Kakuma community.",
+
+    images: [
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1000&q=85"
+    ]
+  }
+
+];
+
+
+/* =========================================
+   RENDER CARDS
+   ========================================= */
+
+function renderCards() {
+
+  const grid = document.getElementById("ministries-grid");
+
+  grid.innerHTML = ministriesData.map(item => `
+
+    <article class="ministry-card">
+
+      <div class="image-gallery">
+
+        <div class="gallery-image">
+          <img
+            src="${item.images[0]}"
+            alt="${item.title}"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="gallery-image">
+          <img
+            src="${item.images[1]}"
+            alt="${item.title}"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="gallery-image">
+          <img
+            src="${item.images[2]}"
+            alt="${item.title}"
+            loading="lazy"
+          />
+        </div>
+
+      </div>
+
+
+      <div class="card-content">
+
+        <div class="card-top">
+
+          <div class="ministry-icon">
+            <i data-lucide="${item.icon}"></i>
+          </div>
+
+          <h2 class="ministry-title">
+            ${item.title}
+          </h2>
+
+        </div>
+
+
+        <p class="ministry-description">
+          ${item.description}
+        </p>
+
+
+        <button
+          class="learn-more"
+          onclick="openModal('${item.id}')"
+        >
+
+          Learn more
+
+          <i data-lucide="arrow-right"></i>
+
+        </button>
+
+      </div>
+
+    </article>
+
+  `).join("");
+
+  lucide.createIcons();
+}
+
+
+/* =========================================
+   MODAL
+   ========================================= */
+
+const backdrop =
+  document.getElementById("modal-backdrop");
+
+const modalContent =
+  document.getElementById("modal-content");
+
+const closeButton =
+  document.getElementById("modal-close");
+
+
+function openModal(id) {
+
+  const ministry =
+    ministriesData.find(item => item.id === id);
+
+  if (!ministry) return;
+
+
+  modalContent.innerHTML = `
+
+    <div class="modal-body">
+
+      <div class="modal-icon">
+        <i data-lucide="${ministry.icon}"></i>
+      </div>
+
+      <h2 class="modal-title">
+        ${ministry.title}
+      </h2>
+
+      <p class="modal-description">
+        ${ministry.detailedText}
+      </p>
+
+      <h3 class="gallery-title">
+        Ministry Gallery
+      </h3>
+
+      <div class="modal-gallery">
+
+        ${ministry.images.map(image => `
+          <img
+            src="${image}"
+            alt="${ministry.title}"
+          />
+        `).join("")}
+
+      </div>
+
+    </div>
+
+  `;
+
+
+  lucide.createIcons();
+
+  backdrop.classList.add("active");
+
+  document.body.style.overflow = "hidden";
+}
+
+
+function closeModal() {
+
+  backdrop.classList.remove("active");
+
+  document.body.style.overflow = "";
+}
+
+
+/* =========================================
+   EVENTS
+   ========================================= */
+
+closeButton.addEventListener(
+  "click",
+  closeModal
+);
+
+
+backdrop.addEventListener(
+  "click",
+  event => {
+
+    if (event.target === backdrop) {
+      closeModal();
+    }
+
+  }
+);
+
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if (event.key === "Escape") {
+      closeModal();
+    }
+
+  }
+);
+
+
+/* =========================================
+   START
+   ========================================= */
+
+renderCards();
+
+</script>
+
+</body>
+</html>

@@ -49,26 +49,20 @@
 .schedule-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
 
   padding: 8px 14px;
 
-  border-radius: 999px;
+  /* border-radius: 999px; */
 
-  background: #fdf6e2;
-  color: #8c6219;
+  /* background: #fdf6e2; */
+  color: #1a6cba;
 
-  border: 1px solid #f3e5ca;
+  /* border-bottom: 1px solid #1a6cba; */
 
-  font-size: 12px;
+  font-size: 20px;
   font-weight: 700;
 }
-
-.badge-icon {
-  color: var(--pr-primary);
-  font-size: 14px;
-}
-
 .prayer-heading {
   display: flex;
   flex-direction: column;
