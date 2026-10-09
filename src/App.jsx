@@ -1,10 +1,11 @@
 // src/App.jsx
-import React, { useState } from "react";
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 // Layout Components
 import Navbar from "./components/layout/Navbar";
 import MobileMenu from "./components/layout/MobileMenu";
+import Footer from "./components/layout/Footer";
 
 // Page Components from individual page folders
 import HomePage from "./pages/home/HomePage";
@@ -46,6 +47,7 @@ export default function App() {
           <Route path="/prayer-request" element={<PrayerRequestPage />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }

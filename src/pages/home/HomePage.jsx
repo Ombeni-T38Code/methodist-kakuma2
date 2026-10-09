@@ -10,6 +10,7 @@ import VocalFellowship from "../../components/Featured/VocalFellowship";
 
 import ChurchAssistant from "../../components/ChurchAssistant/ChurchAssistant";
 import OurMinistries from "../../components/OurMinistries/OurMinistries";
+import ChurchEvents from "../../components/ChurchEvents/ChurchEvents";
 export default function HomePage() {
   return (
     <div className="home-page">
@@ -21,6 +22,7 @@ export default function HomePage() {
       <Sermons />
       <VocalFellowship />
       <OurMinistries />
+      <ChurchEvents />
       <ServingOur />
 
 

@@ -23,7 +23,7 @@ export default function HeroIntro() {
       </p>
 
       <div className="hero-actions">
-        <Button variant="primary" href="#services">
+        <Button variant="primary" href="/services">
           <i className="fas fa-church mr-2" aria-hidden="true"></i>
           Join Us This Sunday
         </Button>

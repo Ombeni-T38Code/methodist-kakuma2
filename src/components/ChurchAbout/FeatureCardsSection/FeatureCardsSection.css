@@ -5,9 +5,11 @@
 }
 
 .feature-card {
-  background: #ffffff;
+  /* background: #ffffff; */
   padding: 2rem 1.75rem;
   border-radius: 1.25rem;
+    background: #ffffff5b;
+  /* backdrop-filter: blur(-10px); */
   box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.03);
   border: 1px solid #f1f5f9;
   position: relative;

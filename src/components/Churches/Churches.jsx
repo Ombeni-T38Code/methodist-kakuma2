@@ -169,7 +169,7 @@ function ChurchCard({ church, onView, onPray }) {
     >
       {/* TAP HINT BADGE */}
       <div className="touch-hint-badge">
-        <span>Tap to view info</span>
+        <span>Tap to view for Church</span>
       </div>
 
       {/* FULL OVERLAY CONTAINING ALL HIDDEN COMPONENTS */}
